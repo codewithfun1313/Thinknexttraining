@@ -1,0 +1,368 @@
+/* ==========================================================================
+   ThinkNEXT Training — Premium Modern EdTech Design System (CSS3)
+   Typography: Manrope (Headings) & Inter (Body)
+   Brand Colors: Primary #0B1F3A, Secondary #123B66, Accent #F4A62A, Highlight #FFBE55
+   ========================================================================== */
+
+:root {
+  --color-primary: #0B1F3A;
+  --color-secondary: #123B66;
+  --color-accent: #F4A62A;
+  --color-highlight: #FFBE55;
+  --color-bg: #F7F9FC;
+  --color-dark: #07111F;
+  --color-text: #172033;
+  --color-muted: #64748B;
+  --color-white: #FFFFFF;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: hidden;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em;
+}
+
+/* First Section / Hero Slider & Overview Playfair Display Styling */
+#heroSliderSection,
+.hero-slide-caption,
+.animate-marquee,
+.hero-playfair-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.first-section-heading {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 500 !important;
+}
+
+.first-section-text {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 400 !important;
+}
+
+/* Branch & Stream Tabs H4 Headings (18px, weight 400) & Subtitle Spans (12px) */
+.stream-content-pane h4,
+#branchTraining h4 {
+  font-size: 18px !important;
+  line-height: 1.35 !important;
+  font-weight: 400 !important;
+}
+
+.stream-content-pane span,
+#branchTraining .stream-content-pane span {
+  font-size: 12px !important;
+}
+
+/* 8 Times National Awards Carousel Slide Images */
+.award-slide-img {
+  width: 100% !important;
+  max-width: 480px !important;
+  height: 440px !important;
+  object-fit: cover !important;
+  border-radius: 1.25rem !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5) !important;
+}
+
+@media (max-width: 768px) {
+  .award-slide-img {
+    height: 300px !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Custom Clean Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #EEF2F6;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+  border: 2px solid #EEF2F6;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Hero Slider Proportions & Fade Engine (700px Height) */
+.slider-viewport {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  max-height: 700px;
+  overflow: hidden;
+  background-color: #041830;
+}
+
+@media (max-width: 1024px) {
+  .slider-viewport {
+    height: 520px;
+    max-height: 520px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-viewport {
+    height: 380px;
+    max-height: 380px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-viewport {
+    height: 250px;
+    max-height: 250px;
+  }
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.7s ease;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Glassmorphism & UI Accents */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgb(255 243 199 / 85%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #000000;
+}
+
+/* Subtle Card Glow & Elevation */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 30px -10px rgba(11, 31, 58, 0.08), 0 8px 10px -6px rgba(11, 31, 58, 0.04);
+}
+
+/* Button Pulse & Hover Transitions */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  transition: all 0.25s ease;
+}
+.btn-primary:hover {
+  background-color: var(--color-accent);
+  color: #07111F;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px -4px rgba(244, 166, 42, 0.4);
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, #7C0612 0%, #7C0612 100%);
+  color: #ffffff;
+  font-weight: 800;
+  transition: all 0.25s ease;
+}
+.btn-accent:hover {
+  background: linear-gradient(135deg, #960a17 0%, #7C0612 100%);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px -5px rgba(124, 6, 18, 0.4);
+}
+
+/* Marquee Animations */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Number Counter Animation Pulse */
+.counter-val {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Interactive Sliders */
+.slide-item {
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+/* Scroll Reveal Base */
+.reveal {
+  opacity: 0;
+  transform: translateY(38px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active, .reveal-left.active, .reveal-right.active, .reveal-scale.active {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* Modal Styling */
+.modal-backdrop {
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.modal-backdrop:not(.hidden) {
+  display: flex !important;
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-scaleUp {
+  animation: scaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Toast Notifications */
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes toastSlideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(30px) scale(0.95);
+  }
+}
+
+.toast-in {
+  animation: toastSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.toast-out {
+  animation: toastSlideOut 0.25s ease-in forwards;
+}
+
+/* Background Grid Pattern */
+.bg-tech-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(18, 59, 102, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(18, 59, 102, 0.05) 1px, transparent 1px);
+}
+
+.bg-tech-grid-dark {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* Accessible Focus States */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal, .reveal-left, .reveal-right, .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
